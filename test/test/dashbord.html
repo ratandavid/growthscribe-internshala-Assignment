@@ -1,0 +1,2010 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
+<link rel="stylesheet" type="text/css" href="dashbord.css" />
+
+
+<link rel="stylesheet" type="text/css" href="daterangepicker.css" />
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+  integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script src="https://kit.fontawesome.com/e0a3b207f2.js" crossorigin="anonymous"></script>
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<!-- Font Awesome -->
+<script src="https://use.fontawesome.com/38ceda47c4.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+<!-- daterangepicker  -->
+<script type="text/javascript" src="daterangepicker.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+<style type="text/css">
+
+  </style>
+  <title>Table</title>
+</head>
+<body>
+  <!--Navbar start-->
+  <nav class="navbar sticky-top navbar-expand-lg navbar-light lg-light border-bottom">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#"><img src="image/Logo.svg" width="110" height="40"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item active" onclick="toggleShowHide(this)">
+            <a class="nav-link" aria-current="page" href="#">Result Data</a>
+            <ul  class="dropdown-menu mm-result-data">
+							<li><a class="dropdown-item" href="#">Option 1</a></li>
+							<li><a class="dropdown-item" href="#">Option 2</a></li>
+							<li><a class="dropdown-item" href="#">Option 3</a></li>
+							<li><a class="dropdown-item" href="#">Option 4</a></li>
+							<li><a class="dropdown-item" href="#">Option 5</a></li>
+							<li><a class="dropdown-item" href="#">Option 6</a></li>
+						</ul>
+          </li>
+          <li class="nav-item" onclick="toggleShowHide(this)">
+            <a class="nav-link" aria-current="page" href="#">Check Database</a>
+            <ul class="dropdown-menu mm-check-database">
+							<li><a class="dropdown-item" href="#">Option 1</a></li>
+							<li><a class="dropdown-item" href="#">Option 2</a></li>
+							<li><a class="dropdown-item" href="#">Option 3</a></li>
+							<li><a class="dropdown-item" href="#">Option 4</a></li>
+							<li><a class="dropdown-item" href="#">Option 5</a></li>
+							<li><a class="dropdown-item" href="#">Option 6</a></li>
+						</ul>
+          </li>
+          <li class="nav-item" onclick="toggleShowHide(this)">
+            <a class="nav-link" aria-current="page" href="#">Valuation Data</a>
+            <ul class="dropdown-menu mm-valuation-data">
+							<li><a class="dropdown-item" href="#">Option 1</a></li>
+							<li><a class="dropdown-item" href="#">Option 2</a></li>
+							<li><a class="dropdown-item" href="#">Option 3</a></li>
+							<li><a class="dropdown-item" href="#">Option 4</a></li>
+							<li><a class="dropdown-item" href="#">Option 5</a></li>
+							<li><a class="dropdown-item" href="#">Option 6</a></li>
+						</ul>
+          </li>
+          <li class="nav-item" onclick="toggleShowHide(this)">
+            <a class="nav-link" aria-current="page" href="#">Result Calendar</a>
+            <ul class="dropdown-menu mm-result-calendar">
+							<li><a class="dropdown-item" href="#">Option 1</a></li>
+							<li><a class="dropdown-item" href="#">Option 2</a></li>
+							<li><a class="dropdown-item" href="#">Option 3</a></li>
+						</ul>
+          </li>
+          <li class="nav-item" onclick="toggleShowHide(this)">
+            <a class="nav-link" aria-current="page" href="#">Forensic Data</a>
+            <ul class="dropdown-menu mm-forensic-data">
+							<li><a class="dropdown-item" href="#">Option 1</a></li>
+						</ul>
+          </li>
+          <li class="nav-item" onclick="toggleShowHide(this)">
+            <a class="nav-link" aria-current="page" href="#">Volume Data</a>
+            <ul class="dropdown-menu mm-volume-data">
+							<li><a class="dropdown-item" href="#">Option 1</a></li>
+							<li><a class="dropdown-item" href="#">Option 2</a></li>
+						</ul>
+          </li>
+        </ul>
+
+        <form class="d-flex">
+          <div class="search-bar position-relative">
+            <input class="input-search mt-1" type="search" placeholder="Search anything here" aria-label="Search">
+            <i class="fas fa-search position-absolute" style="font-size:15px;top:11px;right:10px;color:#f47a14;"></i>
+          </div>
+          <div class="profile d-flex">
+            <img src="image/user.png" width="35" height="35" style="border-radius:50%;margin-right:5px;">
+            <p class="welcome">WELCOME<br />PARAG!</p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </nav>
+  <!--Navbar End-->
+
+  <section class="mt-4">
+    <div class="container-m shadow-sm p-3 bg-body">
+      <div class="row">
+        <div class="filter-nav d-flex align-items-center">
+          <h5>Manage Filters</h5>
+          <div class="sid-btn d-flex">
+            <div id="filters-section" class="filters-section">
+              <div class="date-selector-section">
+                <div class="picker-div filter filter-btn">
+                  <span></span><i class="fa fa-sort-down"></i>
+                </div>
+              </div>
+            </div>
+            <div class="position-relative mx-2" style="height:30px;">
+              <i class="bi bi-funnel-fill position-absolute" id="fil-i" style="color: #fff;"></i>
+              <input type="submit" id="fil-open" class="form-select" value="SHOW FILTERS">
+
+            </div>
+            <div>
+              <button id="fil-close" class="btn border border-1 d-none">CANCEL</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="filter-contan mt-4" id="filter-tags">
+
+          <!-- <div class="alert alert-dismissible fade show filter-alart" role="alert">
+            Agriculture
+            <span class="btn-close" data-bs-dismiss="alert"></span>
+          </div>
+
+          <div class="alert alert-dismissible fade show filter-alart" role="alert">
+            Market Cap 500-700
+            <span class="btn-close" data-bs-dismiss="alert"></span>
+          </div>
+
+          <div class="alert alert-dismissible fade show filter-alart" role="alert">
+            EBDITA (YOY)% 500
+            <span class="btn-close" data-bs-dismiss="alert"></span>
+          </div>
+
+          <div class="alert alert-dismissible fade show filter-alart" role="alert">
+            Agriculture
+            <span class="btn-close" data-bs-dismiss="alert"></span>
+          </div>
+
+          <div class="alert alert-dismissible fade show filter-alart" role="alert">
+            Market Cap 500-700
+            <span class="btn-close" data-bs-dismiss="alert"></span>
+          </div>
+
+          <div class="alert alert-dismissible fade show filter-alart" role="alert">
+            EBDITA (YOY)% 500
+            <span class="btn-close" data-bs-dismiss="alert"></span>
+          </div>
+
+          <div class="alert alert-dismissible fade show filter-alart" role="alert">
+            Agriculture
+            <span class="btn-close" data-bs-dismiss="alert"></span>
+          </div>
+
+          <div class="alert alert-dismissible fade show filter-alart" role="alert">
+            Market Cap 500-700
+            <span class="btn-close" data-bs-dismiss="alert"></span>
+          </div>
+
+          <div class="alert alert-dismissible fade show filter-alart" role="alert">
+            EBDITA (YOY)% 500
+            <span class="btn-close" data-bs-dismiss="alert"></span>
+          </div>
+
+          <div class="alert alert-dismissible fade show filter-alart" role="alert">
+            EBDITA (YOY)% 500
+            <span class="btn-close" data-bs-dismiss="alert"></span>
+          </div>
+
+          <div class="alert alert-dismissible fade show filter-alart" role="alert">
+            EBDITA (YOY)% 500
+            <span class="btn-close" data-bs-dismiss="alert"></span>
+          </div>
+
+          <div class="alert alert-dismissible fade show filter-alart" role="alert">
+            EBDITA (YOY)% 500
+            <span class="btn-close" data-bs-dismiss="alert"></span>
+          </div>
+
+          <div class="alert alert-dismissible fade show filter-alart" role="alert">
+            EBDITA (YOY)% 500
+            <span class="btn-close" data-bs-dismiss="alert"></span>
+          </div>
+
+          <div class="alert alert-dismissible fade show filter-alart" role="alert">
+            EBDITA (YOY)% 500
+            <span class="btn-close" data-bs-dismiss="alert"></span>
+          </div>
+
+          <div class="alert alert-dismissible fade show filter-alart" role="alert">
+            EBDITA (YOY)% 500
+            <span class="btn-close" data-bs-dismiss="alert"></span>
+          </div>
+
+          <div class="alert alert-dismissible fade show filter-alart" role="alert">
+            EBDITA (YOY)% 500
+            <span class="btn-close" data-bs-dismiss="alert"></span>
+          </div> -->
+
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="container-m shadow-sm p-3 bg-body px-0 my-5 Seet">
+
+    <div class="Seet-nav px-3 mt-3 mb-4 d-flex">
+      <div class="sheet-buttons">
+        <ul class="d-flex">
+          <li class="sheet-btn sheet-1 active">Sheet1</li>
+          <li class="sheet-btn sheet-2">Sheet2</li>
+          <li class="sheet-btn sheet-3">Sheet3</li>
+        </ul>
+      </div>
+      <div class="d-flex container-countrow">
+        <p id="count-row" class="ms-2 me-1"></p><p class="r-results">results found: Showing page 1 of</p>
+      </div>
+
+      <div class="filters ms-auto d-flex">
+
+        <button type="button" class="btn export-btn csv">
+          EXPORT CSV
+          <img src="image/CSV-01.svg" style="width:12px;margin-bottom:2px;">
+        </button>
+
+        <button type="button" class="btn export-btn xls">
+          EXPORT XLS
+          <img src="image/Excel-01.svg" style="width:12px;margin-bottom:2px;">
+        </button>
+
+        <button type="button" class="btn export-btn pdf">
+          EXPORT PDF
+          <img src="image/PDF-01.svg" style="width:12px;margin-bottom:2px;">
+        </button>
+            <div id="checkbox-filter-dropdown2" class="checkbox-filter-btn2"
+                tabindex="1">
+                <span>Select Filters</span>
+                <i class="bi bi-gear"></i>
+                <ul class="options checkbox-options" tabindex="1">
+                  <div>
+                    <li class="position-relative">
+                      <i class="fa fa-times position-absolute" style="top:3px;color: #f47a14;"></i>
+                      <p class="text mb-1 ps-3">Clear All</p>
+                    </li>
+                    <label>Sales</label>
+                    <li class="filter-checkbox">
+                      <input type="checkbox" name="1Q-Sales" id="1_check" class="custom-checkbox" data-columnindex="1"/>
+                      <label for="1_check" class="text">Hide 1Q</label>
+                    </li>
+                    <li class="filter-checkbox">
+                      <input type="checkbox" name="2Q-Sales" id="2_check" class="custom-checkbox" data-columnindex="2"/>
+                      <label for="2_check" class="text">Hide 2Q</label>
+                    </li>
+                    <li class="filter-checkbox">
+                      <input type="checkbox" name="3Q-Sales" id="3_check" class="custom-checkbox" data-columnindex="3"/>
+                      <label for="3_check" class="text">Hide 3Q</label>
+                    </li>
+                    <li class="filter-checkbox">
+                      <input type="checkbox" name="4Q-Sales" id="4_check" class="custom-checkbox" data-columnindex="4"/>
+                      <label for="4_check" class="text">Hide 4Q</label>
+                    </li>
+                    <li class="filter-checkbox">
+                      <input type="checkbox" name="5Q-Sales" id="5_check" class="custom-checkbox" data-columnindex="5"/>
+                      <label for="5_check" class="text">Hide 5Q</label>
+                    </li>
+                  </div>
+                  <div>
+                    
+                    <label>EBDITA</label>
+                    <li class="filter-checkbox">
+                      <input type="checkbox" name="1Q-EBDITA" id="6_check" class="custom-checkbox" data-columnindex="6"/>
+                      <label for="6_check" class="text">Hide 1Q</label>
+                    </li>
+                    <li class="filter-checkbox">
+                      <input type="checkbox" name="2Q-EBDITA" id="7_check" class="custom-checkbox" data-columnindex="7"/>
+                      <label for="7_check" class="text">Hide 2Q</label>
+                    </li>
+                    <li class="filter-checkbox">
+                      <input type="checkbox" name="3Q-EBDITA" id="8_check" class="custom-checkbox" data-columnindex="8"/>
+                      <label for="8_check" class="text">Hide 3Q</label>
+                    </li>
+                    <li class="filter-checkbox">
+                      <input type="checkbox" name="4Q-EBDITA" id="9_check" class="custom-checkbox" data-columnindex="9"/>
+                      <label for="9_check" class="text">Hide 4Q</label>
+                    </li>
+                    <li class="filter-checkbox">
+                      <input type="checkbox" name="5Q-EBDITA" id="10_check" class="custom-checkbox" data-columnindex="10"/>
+                      <label for="10_check" class="text">Hide 5Q</label>
+                    </li>
+                  </div>
+                </ul>
+            </div>
+      </div>
+    </div>
+
+    <div style="position: relative;">
+      <div id="table-container" class="table-container">
+        <table id="seet-table" class="tablemanager table table-striped table-borderless text-center">
+          <thead>
+            <tr class="top-head">
+              <th rowspan="2">Company Name</th>
+              <th rowspan="2">Sector</th>
+              <th rowspan="2">Market Cap</th>
+              <th colspan="5" class="disableSort">Sales</th>
+              <th colspan="5" class="disableSort">EBDITA</th>
+            </tr>
+            <tr class="m-head">
+              <th id="1Q-Sales">1Q</th>
+              <th id="2Q-Sales">2Q</th>
+              <th id="3Q-Sales">3Q</th>
+              <th id="4Q-Sales">4Q</th>
+              <th id="5Q-Sales">5Q</th>
+              <th id="1Q-EBDITA">1Q</th>
+              <th id="2Q-EBDITA">2Q</th>
+              <th id="3Q-EBDITA">3Q</th>
+              <th id="4Q-EBDITA">4Q</th>
+              <th id="5Q-EBDITA">5Q</th>
+            </tr>
+          </thead>
+
+                <tbody>
+                  <tr>
+                    <td><p>Nitin Spinners Private LDD Nitin Spinners Private LDD Nitin Spinners</p></td>
+                    <td><p>Retailing</p></td>
+                    <td><p>1871265</p></td>
+                    <td><p>1871265.91</p></td>
+                    <td><p>1871265.81</p></td>
+                    <td><p>07-05-2021</p></td>
+                    <td><p>1871265.41</p></td>
+                    <td><p>1871265.61</p></td>
+                    <td><p>07-05-2021</p></td>
+                    <td><p>1871265.91</p></td>
+                    <td><p>1871265.21</p></td>
+                    <td><p>1871265.51</p></td>
+                    <td><p>1871265.41</p></td>
+                  </tr>
+                  <tr>
+                    <td><p>Nitin Spinners Private LDD</p></td>
+                    <td><p>Retailing</p></td>
+                    <td><p>1871265</p></td>
+                    <td><p>2841265.91</p></td>
+                    <td><p>300265.81</p></td>
+                    <td><p>08-04-2021</p></td>
+                    <td><p>8001265.41</p></td>
+                    <td><p>10071265.6</p></td>
+                    <td><p>05-04-2021</p></td>
+                    <td><p>9001265.91</p></td>
+                    <td><p>1451265.81</p></td>
+                    <td><p>1841265.63</p></td>
+                    <td><p>1571265.61</p></td>
+                  </tr>
+                  <tr>
+                    <td><p>Nitin Spinners Private LTT</p></td>
+                    <td><p>Retailing</p></td>
+                    <td><p>1871265</p></td>
+                    <td><p>8712565.21</p></td>
+                    <td><p>1871265.88</p></td>
+                    <td><p>08-04-2021</p></td>
+                    <td><p>1874265.41</p></td>
+                    <td><p>1631265.61</p></td>
+                    <td><p>09-08-2021</p></td>
+                    <td><p>7871275.91</p></td>
+                    <td><p>8871265821</p></td>
+                    <td><p>5871265.51</p></td>
+                    <td><p>3871265.41</p></td>
+                  </tr>
+                  <tr>
+                    <td><p>Nitin Spinners Private LTD</p></td>
+                    <td><p>Retailing</p></td>
+                    <td><p>1871265</p></td>
+                    <td><p>1871265.91</p></td>
+                    <td><p>1871265.81</p></td>
+                    <td><p>07-05-2021</p></td>
+                    <td><p>1871265.41</p></td>
+                    <td><p>1871265.61</p></td>
+                    <td><p>07-05-2021</p></td>
+                    <td><p>1871265.91</p></td>
+                    <td><p>1871265.21</p></td>
+                    <td><p>1871265.51</p></td>
+                    <td><p>1871265.41</p></td>
+                  </tr>
+                  <tr>
+                    <td><p>Nitin Spinners Private LTC</p></td>
+                    <td><p>Retailing</p></td>
+                    <td><p>1871265</p></td>
+                    <td><p>2841265.91</p></td>
+                    <td><p>300265.81</p></td>
+                    <td><p>08-04-2021</p></td>
+                    <td><p>8001265.41</p></td>
+                    <td><p>10071265.6</p></td>
+                    <td><p>05-04-2021</p></td>
+                    <td><p>9001265.91</p></td>
+                    <td><p>1451265.81</p></td>
+                    <td><p>1841265.63</p></td>
+                    <td><p>1571265.61</p></td>
+                  </tr>
+                  <tr>
+                    <td><p>Nitin Spinners Private LTT</p></td>
+                    <td><p>Retailing</p></td>
+                    <td><p>1871265</p></td>
+                    <td><p>8712565.21</p></td>
+                    <td><p>1871265.88</p></td>
+                    <td><p>08-04-2021</p></td>
+                    <td><p>1874265.41</p></td>
+                    <td><p>1631265.61</p></td>
+                    <td><p>09-08-2021</p></td>
+                    <td><p>7871275.91</p></td>
+                    <td><p>8871265821</p></td>
+                    <td><p>5871265.51</p></td>
+                    <td><p>3871265.41</p></td>
+                  </tr>
+                  <tr>
+                    <td><p>Nitin Spinners Private LTD</p></td>
+                    <td><p>Retailing</p></td>
+                    <td><p>1871265</p></td>
+                    <td><p>1871265.91</p></td>
+                    <td><p>1871265.81</p></td>
+                    <td><p>07-05-2021</p></td>
+                    <td><p>1871265.41</p></td>
+                    <td><p>1871265.61</p></td>
+                    <td><p>07-05-2021</p></td>
+                    <td><p>1871265.91</p></td>
+                    <td><p>1871265.21</p></td>
+                    <td><p>1871265.51</p></td>
+                    <td><p>1871265.41</p></td>
+                  </tr>
+                  <tr>
+                    <td><p>Nitin Spinners Private LTC</p></td>
+                    <td><p>Retailing</p></td>
+                    <td><p>1871265</p></td>
+                    <td><p>2841265.91</p></td>
+                    <td><p>300265.81</p></td>
+                    <td><p>08-04-2021</p></td>
+                    <td><p>8001265.41</p></td>
+                    <td><p>10071265.6</p></td>
+                    <td><p>05-04-2021</p></td>
+                    <td><p>9001265.91</p></td>
+                    <td><p>1451265.81</p></td>
+                    <td><p>1841265.63</p></td>
+                    <td><p>1571265.61</p></td>
+                  </tr>
+                  <tr>
+                    <td><p>Nitin Spinners Private LTT</p></td>
+                    <td><p>Retailing</p></td>
+                    <td><p>1871265</p></td>
+                    <td><p>8712565.21</p></td>
+                    <td><p>1871265.88</p></td>
+                    <td><p>08-04-2021</p></td>
+                    <td><p>1874265.41</p></td>
+                    <td><p>1631265.61</p></td>
+                    <td><p>09-08-2021</p></td>
+                    <td><p>7871275.91</p></td>
+                    <td><p>8871265821</p></td>
+                    <td><p>5871265.51</p></td>
+                    <td><p>3871265.41</p></td>
+                  </tr>
+                  <tr>
+                    <td><p>Nitin Spinners Private LTD</p></td>
+                    <td><p>Retailing</p></td>
+                    <td><p>1871265</p></td>
+                    <td><p>1871265.91</p></td>
+                    <td><p>1871265.81</p></td>
+                    <td><p>07-05-2021</p></td>
+                    <td><p>1871265.41</p></td>
+                    <td><p>1871265.61</p></td>
+                    <td><p>07-05-2021</p></td>
+                    <td><p>1871265.91</p></td>
+                    <td><p>1871265.21</p></td>
+                    <td><p>1871265.51</p></td>
+                    <td><p>1871265.41</p></td>
+                  </tr>
+                  <tr>
+                    <td><p>Nitin Spinners Private LTC</p></td>
+                    <td><p>Retailing</p></td>
+                    <td><p>1871265</p></td>
+                    <td><p>2841265.91</p></td>
+                    <td><p>300265.81</p></td>
+                    <td><p>08-04-2021</p></td>
+                    <td><p>8001265.41</p></td>
+                    <td><p>10071265.6</p></td>
+                    <td><p>05-04-2021</p></td>
+                    <td><p>9001265.91</p></td>
+                    <td><p>1451265.81</p></td>
+                    <td><p>1841265.63</p></td>
+                    <td><p>1571265.61</p></td>
+                  </tr>
+                  <tr>
+                    <td><p>Nitin Spinners Private LTT</p></td>
+                    <td><p>Retailing</p></td>
+                    <td><p>1871265</p></td>
+                    <td><p>8712565.21</p></td>
+                    <td><p>1871265.88</p></td>
+                    <td><p>08-04-2021</p></td>
+                    <td><p>1874265.41</p></td>
+                    <td><p>1631265.61</p></td>
+                    <td><p>09-08-2021</p></td>
+                    <td><p>7871275.91</p></td>
+                    <td><p>8871265821</p></td>
+                    <td><p>5871265.51</p></td>
+                    <td><p>3871265.41</p></td>
+                  </tr>
+                  <tr>
+                    <td><p>Nitin Spinners Private LTD</p></td>
+                    <td><p>Retailing</p></td>
+                    <td><p>1871265</p></td>
+                    <td><p>1871265.91</p></td>
+                    <td><p>1871265.81</p></td>
+                    <td><p>07-05-2021</p></td>
+                    <td><p>1871265.41</p></td>
+                    <td><p>1871265.61</p></td>
+                    <td><p>07-05-2021</p></td>
+                    <td><p>1871265.91</p></td>
+                    <td><p>1871265.21</p></td>
+                    <td><p>1871265.51</p></td>
+                    <td><p>1871265.41</p></td>
+                  </tr>
+                  <tr>
+                    <td><p>Nitin Spinners Private LTC</p></td>
+                    <td><p>Retailing</p></td>
+                    <td><p>1871265</p></td>
+                    <td><p>2841265.91</p></td>
+                    <td><p>300265.81</p></td>
+                    <td><p>08-04-2021</p></td>
+                    <td><p>8001265.41</p></td>
+                    <td><p>10071265.6</p></td>
+                    <td><p>05-04-2021</p></td>
+                    <td><p>9001265.91</p></td>
+                    <td><p>1451265.81</p></td>
+                    <td><p>1841265.63</p></td>
+                    <td><p>1571265.61</p></td>
+                  </tr>
+                  <tr>
+                    <td><p>Nitin Spinners Private LTT</p></td>
+                    <td><p>Retailing</p></td>
+                    <td><p>1871265</p></td>
+                    <td><p>8712565.21</p></td>
+                    <td><p>1871265.88</p></td>
+                    <td><p>08-04-2021</p></td>
+                    <td><p>1874265.41</p></td>
+                    <td><p>1631265.61</p></td>
+                    <td><p>09-08-2021</p></td>
+                    <td><p>7871275.91</p></td>
+                    <td><p>8871265821</p></td>
+                    <td><p>5871265.51</p></td>
+                    <td><p>3871265.41</p></td>
+                  </tr>
+                  <tr>
+                    <td><p>Nitin Spinners Private LTD</p></td>
+                    <td><p>Retailing</p></td>
+                    <td><p>1871265</p></td>
+                    <td><p>1871265.91</p></td>
+                    <td><p>1871265.81</p></td>
+                    <td><p>07-05-2021</p></td>
+                    <td><p>1871265.41</p></td>
+                    <td><p>1871265.61</p></td>
+                    <td><p>07-05-2021</p></td>
+                    <td><p>1871265.91</p></td>
+                    <td><p>1871265.21</p></td>
+                    <td><p>1871265.51</p></td>
+                    <td><p>1871265.41</p></td>
+                  </tr>
+                  <tr>
+                    <td><p>Nitin Spinners Private LTC</p></td>
+                    <td><p>Retailing</p></td>
+                    <td><p>1871265</p></td>
+                    <td><p>2841265.91</p></td>
+                    <td><p>300265.81</p></td>
+                    <td><p>08-04-2021</p></td>
+                    <td><p>8001265.41</p></td>
+                    <td><p>10071265.6</p></td>
+                    <td><p>05-04-2021</p></td>
+                    <td><p>9001265.91</p></td>
+                    <td><p>1451265.81</p></td>
+                    <td><p>1841265.63</p></td>
+                    <td><p>1571265.61</p></td>
+                  </tr>
+                  <tr>
+                    <td><p>Nitin Spinners Private LTT</p></td>
+                    <td><p>Retailing</p></td>
+                    <td><p>1871265</p></td>
+                    <td><p>8712565.21</p></td>
+                    <td><p>1871265.88</p></td>
+                    <td><p>08-04-2021</p></td>
+                    <td><p>1874265.41</p></td>
+                    <td><p>1631265.61</p></td>
+                    <td><p>09-08-2021</p></td>
+                    <td><p>7871275.91</p></td>
+                    <td><p>8871265821</p></td>
+                    <td><p>5871265.51</p></td>
+                    <td><p>3871265.41</p></td>
+                  </tr>
+                  <tr>
+                    <td><p>Nitin Spinners Private LTD</p></td>
+                    <td><p>Retailing</p></td>
+                    <td><p>1871265</p></td>
+                    <td><p>1871265.91</p></td>
+                    <td><p>1871265.81</p></td>
+                    <td><p>07-05-2021</p></td>
+                    <td><p>1871265.41</p></td>
+                    <td><p>1871265.61</p></td>
+                    <td><p>07-05-2021</p></td>
+                    <td><p>1871265.91</p></td>
+                    <td><p>1871265.21</p></td>
+                    <td><p>1871265.51</p></td>
+                    <td><p>1871265.41</p></td>
+                  </tr>
+                  <tr>
+                    <td><p>Nitin Spinners Private LTC</p></td>
+                    <td><p>Retailing</p></td>
+                    <td><p>1871265</p></td>
+                    <td><p>2841265.91</p></td>
+                    <td><p>300265.81</p></td>
+                    <td><p>08-04-2021</p></td>
+                    <td><p>8001265.41</p></td>
+                    <td><p>10071265.6</p></td>
+                    <td><p>05-04-2021</p></td>
+                    <td><p>9001265.91</p></td>
+                    <td><p>1451265.81</p></td>
+                    <td><p>1841265.63</p></td>
+                    <td><p>1571265.61</p></td>
+                  </tr>
+                  <tr>
+                    <td><p>Nitin Spinners Private LTT</p></td>
+                    <td><p>Retailing</p></td>
+                    <td><p>1871265</p></td>
+                    <td><p>8712565.21</p></td>
+                    <td><p>1871265.88</p></td>
+                    <td><p>08-04-2021</p></td>
+                    <td><p>1874265.41</p></td>
+                    <td><p>1631265.61</p></td>
+                    <td><p>09-08-2021</p></td>
+                    <td><p>7871275.91</p></td>
+                    <td><p>8871265821</p></td>
+                    <td><p>5871265.51</p></td>
+                    <td><p>3871265.41</p></td>
+                  </tr>
+                  <tr>
+                    <td><p>Nitin Spinners Private LTD</p></td>
+                    <td><p>Retailing</p></td>
+                    <td><p>1871265</p></td>
+                    <td><p>1871265.91</p></td>
+                    <td><p>1871265.81</p></td>
+                    <td><p>07-05-2021</p></td>
+                    <td><p>1871265.41</p></td>
+                    <td><p>1871265.61</p></td>
+                    <td><p>07-05-2021</p></td>
+                    <td><p>1871265.91</p></td>
+                    <td><p>1871265.21</p></td>
+                    <td><p>1871265.51</p></td>
+                    <td><p>1871265.41</p></td>
+                  </tr>
+                  <tr>
+                    <td><p>Nitin Spinners Private LTC</p></td>
+                    <td><p>Retailing</p></td>
+                    <td><p>1871265</p></td>
+                    <td><p>2841265.91</p></td>
+                    <td><p>300265.81</p></td>
+                    <td><p>08-04-2021</p></td>
+                    <td><p>8001265.41</p></td>
+                    <td><p>10071265.6</p></td>
+                    <td><p>05-04-2021</p></td>
+                    <td><p>9001265.91</p></td>
+                    <td><p>1451265.81</p></td>
+                    <td><p>1841265.63</p></td>
+                    <td><p>1571265.61</p></td>
+                  </tr>
+                  <tr>
+                    <td><p>Nitin Spinners Private LTT</p></td>
+                    <td><p>Retailing</p></td>
+                    <td><p>1871265</p></td>
+                    <td><p>8712565.21</p></td>
+                    <td><p>1871265.88</p></td>
+                    <td><p>08-04-2021</p></td>
+                    <td><p>1874265.41</p></td>
+                    <td><p>1631265.61</p></td>
+                    <td><p>09-08-2021</p></td>
+                    <td><p>7871275.91</p></td>
+                    <td><p>8871265821</p></td>
+                    <td><p>5871265.51</p></td>
+                    <td><p>3871265.41</p></td>
+                  </tr>
+                  <tr>
+                    <td><p>Nitin Spinners Private LTD</p></td>
+                    <td><p>Retailing</p></td>
+                    <td><p>1871265</p></td>
+                    <td><p>1871265.91</p></td>
+                    <td><p>1871265.81</p></td>
+                    <td><p>07-05-2021</p></td>
+                    <td><p>1871265.41</p></td>
+                    <td><p>1871265.61</p></td>
+                    <td><p>07-05-2021</p></td>
+                    <td><p>1871265.91</p></td>
+                    <td><p>1871265.21</p></td>
+                    <td><p>1871265.51</p></td>
+                    <td><p>1871265.41</p></td>
+                  </tr>
+                  <tr>
+                    <td><p>Nitin Spinners Private LTC</p></td>
+                    <td><p>Retailing</p></td>
+                    <td><p>1871265</p></td>
+                    <td><p>2841265.91</p></td>
+                    <td><p>300265.81</p></td>
+                    <td><p>08-04-2021</p></td>
+                    <td><p>8001265.41</p></td>
+                    <td><p>10071265.6</p></td>
+                    <td><p>05-04-2021</p></td>
+                    <td><p>9001265.91</p></td>
+                    <td><p>1451265.81</p></td>
+                    <td><p>1841265.63</p></td>
+                    <td><p>1571265.61</p></td>
+                  </tr>
+                  <tr>
+                    <td><p>Nitin Spinners Private LTT</p></td>
+                    <td><p>Retailing</p></td>
+                    <td><p>1871265</p></td>
+                    <td><p>8712565.21</p></td>
+                    <td><p>1871265.88</p></td>
+                    <td><p>08-04-2021</p></td>
+                    <td><p>1874265.41</p></td>
+                    <td><p>1631265.61</p></td>
+                    <td><p>09-08-2021</p></td>
+                    <td><p>7871275.91</p></td>
+                    <td><p>8871265821</p></td>
+                    <td><p>5871265.51</p></td>
+                    <td><p>3871265.41</p></td>
+                  </tr>
+                  <tr>
+                    <td><p>Nitin Spinners Private LTD</p></td>
+                    <td><p>Retailing</p></td>
+                    <td><p>1871265</p></td>
+                    <td><p>1871265.91</p></td>
+                    <td><p>1871265.81</p></td>
+                    <td><p>07-05-2021</p></td>
+                    <td><p>1871265.41</p></td>
+                    <td><p>1871265.61</p></td>
+                    <td><p>07-05-2021</p></td>
+                    <td><p>1871265.91</p></td>
+                    <td><p>1871265.21</p></td>
+                    <td><p>1871265.51</p></td>
+                    <td><p>1871265.41</p></td>
+                  </tr>
+                  <tr>
+                    <td><p>Nitin Spinners Private LTC</p></td>
+                    <td><p>Retailing</p></td>
+                    <td><p>1871265</p></td>
+                    <td><p>2841265.91</p></td>
+                    <td><p>300265.81</p></td>
+                    <td><p>08-04-2021</p></td>
+                    <td><p>8001265.41</p></td>
+                    <td><p>10071265.6</p></td>
+                    <td><p>05-04-2021</p></td>
+                    <td><p>9001265.91</p></td>
+                    <td><p>1451265.81</p></td>
+                    <td><p>1841265.63</p></td>
+                    <td><p>1571265.61</p></td>
+                  </tr>
+                  <tr>
+                    <td><p>Nitin Spinners Private LTT</p></td>
+                    <td><p>Retailing</p></td>
+                    <td><p>1871265</p></td>
+                    <td><p>8712565.21</p></td>
+                    <td><p>1871265.88</p></td>
+                    <td><p>08-04-2021</p></td>
+                    <td><p>1874265.41</p></td>
+                    <td><p>1631265.61</p></td>
+                    <td><p>09-08-2021</p></td>
+                    <td><p>7871275.91</p></td>
+                    <td><p>8871265821</p></td>
+                    <td><p>5871265.51</p></td>
+                    <td><p>3871265.41</p></td>
+                  </tr>
+                  <tr>
+                    <td><p>Nitin Spinners Private LTD</p></td>
+                    <td><p>Retailing</p></td>
+                    <td><p>1871265</p></td>
+                    <td><p>1871265.91</p></td>
+                    <td><p>1871265.81</p></td>
+                    <td><p>07-05-2021</p></td>
+                    <td><p>1871265.41</p></td>
+                    <td><p>1871265.61</p></td>
+                    <td><p>07-05-2021</p></td>
+                    <td><p>1871265.91</p></td>
+                    <td><p>1871265.21</p></td>
+                    <td><p>1871265.51</p></td>
+                    <td><p>1871265.41</p></td>
+                  </tr>
+                  <tr>
+                    <td><p>Nitin Spinners Private LTC</p></td>
+                    <td><p>Retailing</p></td>
+                    <td><p>1871265</p></td>
+                    <td><p>2841265.91</p></td>
+                    <td><p>300265.81</p></td>
+                    <td><p>08-04-2021</p></td>
+                    <td><p>8001265.41</p></td>
+                    <td><p>10071265.6</p></td>
+                    <td><p>05-04-2021</p></td>
+                    <td><p>9001265.91</p></td>
+                    <td><p>1451265.81</p></td>
+                    <td><p>1841265.63</p></td>
+                    <td><p>1571265.61</p></td>
+                  </tr>
+                  <tr>
+                    <td><p>Nitin Spinners Private LTT</p></td>
+                    <td><p>Retailing</p></td>
+                    <td><p>1871265</p></td>
+                    <td><p>8712565.21</p></td>
+                    <td><p>1871265.88</p></td>
+                    <td><p>08-04-2021</p></td>
+                    <td><p>1874265.41</p></td>
+                    <td><p>1631265.61</p></td>
+                    <td><p>09-08-2021</p></td>
+                    <td><p>7871275.91</p></td>
+                    <td><p>8871265821</p></td>
+                    <td><p>5871265.51</p></td>
+                    <td><p>3871265.41</p></td>
+                  </tr>
+                  <tr>
+                    <td><p>Nitin Spinners Private LTD</p></td>
+                    <td><p>Retailing</p></td>
+                    <td><p>1871265</p></td>
+                    <td><p>1871265.91</p></td>
+                    <td><p>1871265.81</p></td>
+                    <td><p>07-05-2021</p></td>
+                    <td><p>1871265.41</p></td>
+                    <td><p>1871265.61</p></td>
+                    <td><p>07-05-2021</p></td>
+                    <td><p>1871265.91</p></td>
+                    <td><p>1871265.21</p></td>
+                    <td><p>1871265.51</p></td>
+                    <td><p>1871265.41</p></td>
+                  </tr>
+                  <tr>
+                    <td><p>Nitin Spinners Private LTC</p></td>
+                    <td><p>Retailing</p></td>
+                    <td><p>1871265</p></td>
+                    <td><p>2841265.91</p></td>
+                    <td><p>300265.81</p></td>
+                    <td><p>08-04-2021</p></td>
+                    <td><p>8001265.41</p></td>
+                    <td><p>10071265.6</p></td>
+                    <td><p>05-04-2021</p></td>
+                    <td><p>9001265.91</p></td>
+                    <td><p>1451265.81</p></td>
+                    <td><p>1841265.63</p></td>
+                    <td><p>1571265.61</p></td>
+                  </tr>
+                  <tr>
+                    <td><p>Nitin Spinners Private LTT</p></td>
+                    <td><p>Retailing</p></td>
+                    <td><p>1871265</p></td>
+                    <td><p>8712565.21</p></td>
+                    <td><p>1871265.88</p></td>
+                    <td><p>08-04-2021</p></td>
+                    <td><p>1874265.41</p></td>
+                    <td><p>1631265.61</p></td>
+                    <td><p>09-08-2021</p></td>
+                    <td><p>7871275.91</p></td>
+                    <td><p>8871265821</p></td>
+                    <td><p>5871265.51</p></td>
+                    <td><p>3871265.41</p></td>
+                  </tr>
+                  <tr>
+                    <td><p>Nitin Spinners Private LTD</p></td>
+                    <td><p>Retailing</p></td>
+                    <td><p>1871265</p></td>
+                    <td><p>1871265.91</p></td>
+                    <td><p>1871265.81</p></td>
+                    <td><p>07-05-2021</p></td>
+                    <td><p>1871265.41</p></td>
+                    <td><p>1871265.61</p></td>
+                    <td><p>07-05-2021</p></td>
+                    <td><p>1871265.91</p></td>
+                    <td><p>1871265.21</p></td>
+                    <td><p>1871265.51</p></td>
+                    <td><p>1871265.41</p></td>
+                  </tr>
+                  <tr>
+                    <td><p>Nitin Spinners Private LTC</p></td>
+                    <td><p>Retailing</p></td>
+                    <td><p>1871265</p></td>
+                    <td><p>2841265.91</p></td>
+                    <td><p>300265.81</p></td>
+                    <td><p>08-04-2021</p></td>
+                    <td><p>8001265.41</p></td>
+                    <td><p>10071265.6</p></td>
+                    <td><p>05-04-2021</p></td>
+                    <td><p>9001265.91</p></td>
+                    <td><p>1451265.81</p></td>
+                    <td><p>1841265.63</p></td>
+                    <td><p>1571265.61</p></td>
+                  </tr>
+                  <tr>
+                    <td><p>Nitin Spinners Private LTT</p></td>
+                    <td><p>Retailing</p></td>
+                    <td><p>1871265</p></td>
+                    <td><p>8712565.21</p></td>
+                    <td><p>1871265.88</p></td>
+                    <td><p>08-04-2021</p></td>
+                    <td><p>1874265.41</p></td>
+                    <td><p>1631265.61</p></td>
+                    <td><p>09-08-2021</p></td>
+                    <td><p>7871275.91</p></td>
+                    <td><p>8871265821</p></td>
+                    <td><p>5871265.51</p></td>
+                    <td><p>3871265.41</p></td>
+                  </tr>
+                  <tr>
+                    <td><p>Nitin Spinners Private LTD</p></td>
+                    <td><p>Retailing</p></td>
+                    <td><p>1871265</p></td>
+                    <td><p>1871265.91</p></td>
+                    <td><p>1871265.81</p></td>
+                    <td><p>07-05-2021</p></td>
+                    <td><p>1871265.41</p></td>
+                    <td><p>1871265.61</p></td>
+                    <td><p>07-05-2021</p></td>
+                    <td><p>1871265.91</p></td>
+                    <td><p>1871265.21</p></td>
+                    <td><p>1871265.51</p></td>
+                    <td><p>1871265.41</p></td>
+                  </tr>
+                  <tr>
+                    <td><p>Nitin Spinners Private LTC</p></td>
+                    <td><p>Retailing</p></td>
+                    <td><p>1871265</p></td>
+                    <td><p>2841265.91</p></td>
+                    <td><p>300265.81</p></td>
+                    <td><p>08-04-2021</p></td>
+                    <td><p>8001265.41</p></td>
+                    <td><p>10071265.6</p></td>
+                    <td><p>05-04-2021</p></td>
+                    <td><p>9001265.91</p></td>
+                    <td><p>1451265.81</p></td>
+                    <td><p>1841265.63</p></td>
+                    <td><p>1571265.61</p></td>
+                  </tr>
+                  <tr>
+                    <td><p>Nitin Spinners Private LTT</p></td>
+                    <td><p>Retailing</p></td>
+                    <td><p>1871265</p></td>
+                    <td><p>8712565.21</p></td>
+                    <td><p>1871265.88</p></td>
+                    <td><p>08-04-2021</p></td>
+                    <td><p>1874265.41</p></td>
+                    <td><p>1631265.61</p></td>
+                    <td><p>09-08-2021</p></td>
+                    <td><p>7871275.91</p></td>
+                    <td><p>8871265821</p></td>
+                    <td><p>5871265.51</p></td>
+                    <td><p>3871265.41</p></td>
+                  </tr>
+                  <tr>
+                    <td><p>Nitin Spinners Private LTD</p></td>
+                    <td><p>Retailing</p></td>
+                    <td><p>1871265</p></td>
+                    <td><p>1871265.91</p></td>
+                    <td><p>1871265.81</p></td>
+                    <td><p>07-05-2021</p></td>
+                    <td><p>1871265.41</p></td>
+                    <td><p>1871265.61</p></td>
+                    <td><p>07-05-2021</p></td>
+                    <td><p>1871265.91</p></td>
+                    <td><p>1871265.21</p></td>
+                    <td><p>1871265.51</p></td>
+                    <td><p>1871265.41</p></td>
+                  </tr>
+                  <tr>
+                    <td><p>Nitin Spinners Private LTC</p></td>
+                    <td><p>Retailing</p></td>
+                    <td><p>1871265</p></td>
+                    <td><p>2841265.91</p></td>
+                    <td><p>300265.81</p></td>
+                    <td><p>08-04-2021</p></td>
+                    <td><p>8001265.41</p></td>
+                    <td><p>10071265.6</p></td>
+                    <td><p>05-04-2021</p></td>
+                    <td><p>9001265.91</p></td>
+                    <td><p>1451265.81</p></td>
+                    <td><p>1841265.63</p></td>
+                    <td><p>1571265.61</p></td>
+                  </tr>
+                  <tr>
+                    <td><p>Nitin Spinners Private LTT</p></td>
+                    <td><p>Retailing</p></td>
+                    <td><p>1871265</p></td>
+                    <td><p>8712565.21</p></td>
+                    <td><p>1871265.88</p></td>
+                    <td><p>08-04-2021</p></td>
+                    <td><p>1874265.41</p></td>
+                    <td><p>1631265.61</p></td>
+                    <td><p>09-08-2021</p></td>
+                    <td><p>7871275.91</p></td>
+                    <td><p>8871265821</p></td>
+                    <td><p>5871265.51</p></td>
+                    <td><p>3871265.41</p></td>
+                  </tr>
+                  <tr>
+                    <td><p>Nitin Spinners Private LTD</p></td>
+                    <td><p>Retailing</p></td>
+                    <td><p>1871265</p></td>
+                    <td><p>1871265.91</p></td>
+                    <td><p>1871265.81</p></td>
+                    <td><p>07-05-2021</p></td>
+                    <td><p>1871265.41</p></td>
+                    <td><p>1871265.61</p></td>
+                    <td><p>07-05-2021</p></td>
+                    <td><p>1871265.91</p></td>
+                    <td><p>1871265.21</p></td>
+                    <td><p>1871265.51</p></td>
+                    <td><p>1871265.41</p></td>
+                  </tr>
+                  <tr>
+                    <td><p>Nitin Spinners Private LTC</p></td>
+                    <td><p>Retailing</p></td>
+                    <td><p>1871265</p></td>
+                    <td><p>2841265.91</p></td>
+                    <td><p>300265.81</p></td>
+                    <td><p>08-04-2021</p></td>
+                    <td><p>8001265.41</p></td>
+                    <td><p>10071265.6</p></td>
+                    <td><p>05-04-2021</p></td>
+                    <td><p>9001265.91</p></td>
+                    <td><p>1451265.81</p></td>
+                    <td><p>1841265.63</p></td>
+                    <td><p>1571265.61</p></td>
+                  </tr>
+                  <tr>
+                    <td><p>Nitin Spinners Private LTT</p></td>
+                    <td><p>Retailing</p></td>
+                    <td><p>1871265</p></td>
+                    <td><p>8712565.21</p></td>
+                    <td><p>1871265.88</p></td>
+                    <td><p>08-04-2021</p></td>
+                    <td><p>1874265.41</p></td>
+                    <td><p>1631265.61</p></td>
+                    <td><p>09-08-2021</p></td>
+                    <td><p>7871275.91</p></td>
+                    <td><p>8871265821</p></td>
+                    <td><p>5871265.51</p></td>
+                    <td><p>3871265.41</p></td>
+                  </tr>
+                  <tr>
+                    <td><p>Nitin Spinners Private LTD</p></td>
+                    <td><p>Retailing</p></td>
+                    <td><p>1871265</p></td>
+                    <td><p>1871265.91</p></td>
+                    <td><p>1871265.81</p></td>
+                    <td><p>07-05-2021</p></td>
+                    <td><p>1871265.41</p></td>
+                    <td><p>1871265.61</p></td>
+                    <td><p>07-05-2021</p></td>
+                    <td><p>1871265.91</p></td>
+                    <td><p>1871265.21</p></td>
+                    <td><p>1871265.51</p></td>
+                    <td><p>1871265.41</p></td>
+                  </tr>
+                  <tr>
+                    <td><p>Nitin Spinners Private LTC</p></td>
+                    <td><p>Retailing</p></td>
+                    <td><p>1871265</p></td>
+                    <td><p>2841265.91</p></td>
+                    <td><p>300265.81</p></td>
+                    <td><p>08-04-2021</p></td>
+                    <td><p>8001265.41</p></td>
+                    <td><p>10071265.6</p></td>
+                    <td><p>05-04-2021</p></td>
+                    <td><p>9001265.91</p></td>
+                    <td><p>1451265.81</p></td>
+                    <td><p>1841265.63</p></td>
+                    <td><p>1571265.61</p></td>
+                  </tr>
+                  <tr>
+                    <td><p>Nitin Spinners Private LTT</p></td>
+                    <td><p>Retailing</p></td>
+                    <td><p>1871265</p></td>
+                    <td><p>8712565.21</p></td>
+                    <td><p>1871265.88</p></td>
+                    <td><p>08-04-2021</p></td>
+                    <td><p>1874265.41</p></td>
+                    <td><p>1631265.61</p></td>
+                    <td><p>09-08-2021</p></td>
+                    <td><p>7871275.91</p></td>
+                    <td><p>8871265821</p></td>
+                    <td><p>5871265.51</p></td>
+                    <td><p>3871265.41</p></td>
+                  </tr>
+                  <tr>
+                    <td><p>Nitin Spinners Private LTD</p></td>
+                    <td><p>Retailing</p></td>
+                    <td><p>1871265</p></td>
+                    <td><p>1871265.91</p></td>
+                    <td><p>1871265.81</p></td>
+                    <td><p>07-05-2021</p></td>
+                    <td><p>1871265.41</p></td>
+                    <td><p>1871265.61</p></td>
+                    <td><p>07-05-2021</p></td>
+                    <td><p>1871265.91</p></td>
+                    <td><p>1871265.21</p></td>
+                    <td><p>1871265.51</p></td>
+                    <td><p>1871265.41</p></td>
+                  </tr>
+                  <tr>
+                    <td><p>Nitin Spinners Private LTC</p></td>
+                    <td><p>Retailing</p></td>
+                    <td><p>1871265</p></td>
+                    <td><p>2841265.91</p></td>
+                    <td><p>300265.81</p></td>
+                    <td><p>08-04-2021</p></td>
+                    <td><p>8001265.41</p></td>
+                    <td><p>10071265.6</p></td>
+                    <td><p>05-04-2021</p></td>
+                    <td><p>9001265.91</p></td>
+                    <td><p>1451265.81</p></td>
+                    <td><p>1841265.63</p></td>
+                    <td><p>1571265.61</p></td>
+                  </tr>
+                  <tr>
+                    <td><p>Nitin Spinners Private LTT</p></td>
+                    <td><p>Retailing</p></td>
+                    <td><p>1871265</p></td>
+                    <td><p>8712565.21</p></td>
+                    <td><p>1871265.88</p></td>
+                    <td><p>08-04-2021</p></td>
+                    <td><p>1874265.41</p></td>
+                    <td><p>1631265.61</p></td>
+                    <td><p>09-08-2021</p></td>
+                    <td><p>7871275.91</p></td>
+                    <td><p>8871265821</p></td>
+                    <td><p>5871265.51</p></td>
+                    <td><p>3871265.41</p></td>
+                  </tr>
+                  <tr>
+                    <td><p>Nitin Spinners Private LTD</p></td>
+                    <td><p>Retailing</p></td>
+                    <td><p>1871265</p></td>
+                    <td><p>1871265.91</p></td>
+                    <td><p>1871265.81</p></td>
+                    <td><p>07-05-2021</p></td>
+                    <td><p>1871265.41</p></td>
+                    <td><p>1871265.61</p></td>
+                    <td><p>07-05-2021</p></td>
+                    <td><p>1871265.91</p></td>
+                    <td><p>1871265.21</p></td>
+                    <td><p>1871265.51</p></td>
+                    <td><p>1871265.41</p></td>
+                  </tr>
+                  <tr>
+                    <td><p>Nitin Spinners Private LTC</p></td>
+                    <td><p>Retailing</p></td>
+                    <td><p>1871265</p></td>
+                    <td><p>2841265.91</p></td>
+                    <td><p>300265.81</p></td>
+                    <td><p>08-04-2021</p></td>
+                    <td><p>8001265.41</p></td>
+                    <td><p>10071265.6</p></td>
+                    <td><p>05-04-2021</p></td>
+                    <td><p>9001265.91</p></td>
+                    <td><p>1451265.81</p></td>
+                    <td><p>1841265.63</p></td>
+                    <td><p>1571265.61</p></td>
+                  </tr>
+                  <tr>
+                    <td><p>Nitin Spinners Private LTT</p></td>
+                    <td><p>Retailing</p></td>
+                    <td><p>1871265</p></td>
+                    <td><p>8712565.21</p></td>
+                    <td><p>1871265.88</p></td>
+                    <td><p>08-04-2021</p></td>
+                    <td><p>1874265.41</p></td>
+                    <td><p>1631265.61</p></td>
+                    <td><p>09-08-2021</p></td>
+                    <td><p>7871275.91</p></td>
+                    <td><p>8871265821</p></td>
+                    <td><p>5871265.51</p></td>
+                    <td><p>3871265.41</p></td>
+                  </tr>
+                  <tr>
+                    <td><p>Nitin Spinners Private LTD</p></td>
+                    <td><p>Retailing</p></td>
+                    <td><p>1871265</p></td>
+                    <td><p>1871265.91</p></td>
+                    <td><p>1871265.81</p></td>
+                    <td><p>07-05-2021</p></td>
+                    <td><p>1871265.41</p></td>
+                    <td><p>1871265.61</p></td>
+                    <td><p>07-05-2021</p></td>
+                    <td><p>1871265.91</p></td>
+                    <td><p>1871265.21</p></td>
+                    <td><p>1871265.51</p></td>
+                    <td><p>1871265.41</p></td>
+                  </tr>
+                  <tr>
+                    <td><p>Nitin Spinners Private LTC</p></td>
+                    <td><p>Retailing</p></td>
+                    <td><p>1871265</p></td>
+                    <td><p>2841265.91</p></td>
+                    <td><p>300265.81</p></td>
+                    <td><p>08-04-2021</p></td>
+                    <td><p>8001265.41</p></td>
+                    <td><p>10071265.6</p></td>
+                    <td><p>05-04-2021</p></td>
+                    <td><p>9001265.91</p></td>
+                    <td><p>1451265.81</p></td>
+                    <td><p>1841265.63</p></td>
+                    <td><p>1571265.61</p></td>
+                  </tr>
+                  <tr>
+                    <td><p>Nitin Spinners Private LTT</p></td>
+                    <td><p>Retailing</p></td>
+                    <td><p>1871265</p></td>
+                    <td><p>8712565.21</p></td>
+                    <td><p>1871265.88</p></td>
+                    <td><p>08-04-2021</p></td>
+                    <td><p>1874265.41</p></td>
+                    <td><p>1631265.61</p></td>
+                    <td><p>09-08-2021</p></td>
+                    <td><p>7871275.91</p></td>
+                    <td><p>8871265821</p></td>
+                    <td><p>5871265.51</p></td>
+                    <td><p>3871265.41</p></td>
+                  </tr>
+                  <tr>
+                    <td><p>Nitin Spinners Private LTD</p></td>
+                    <td><p>Retailing</p></td>
+                    <td><p>1871265</p></td>
+                    <td><p>1871265.91</p></td>
+                    <td><p>1871265.81</p></td>
+                    <td><p>07-05-2021</p></td>
+                    <td><p>1871265.41</p></td>
+                    <td><p>1871265.61</p></td>
+                    <td><p>07-05-2021</p></td>
+                    <td><p>1871265.91</p></td>
+                    <td><p>1871265.21</p></td>
+                    <td><p>1871265.51</p></td>
+                    <td><p>1871265.41</p></td>
+                  </tr>
+                  <tr>
+                    <td><p>Nitin Spinners Private LTC</p></td>
+                    <td><p>Retailing</p></td>
+                    <td><p>1871265</p></td>
+                    <td><p>2841265.91</p></td>
+                    <td><p>300265.81</p></td>
+                    <td><p>08-04-2021</p></td>
+                    <td><p>8001265.41</p></td>
+                    <td><p>10071265.6</p></td>
+                    <td><p>05-04-2021</p></td>
+                    <td><p>9001265.91</p></td>
+                    <td><p>1451265.81</p></td>
+                    <td><p>1841265.63</p></td>
+                    <td><p>1571265.61</p></td>
+                  </tr>
+                  <tr>
+                    <td><p>Nitin Spinners Private LTT</p></td>
+                    <td><p>Retailing</p></td>
+                    <td><p>1871265</p></td>
+                    <td><p>8712565.21</p></td>
+                    <td><p>1871265.88</p></td>
+                    <td><p>08-04-2021</p></td>
+                    <td><p>1874265.41</p></td>
+                    <td><p>1631265.61</p></td>
+                    <td><p>09-08-2021</p></td>
+                    <td><p>7871275.91</p></td>
+                    <td><p>8871265821</p></td>
+                    <td><p>5871265.51</p></td>
+                    <td><p>3871265.41</p></td>
+                  </tr>
+                  <tr>
+                    <td><p>Nitin Spinners Private LTD</p></td>
+                    <td><p>Retailing</p></td>
+                    <td><p>1871265</p></td>
+                    <td><p>1871265.91</p></td>
+                    <td><p>1871265.81</p></td>
+                    <td><p>07-05-2021</p></td>
+                    <td><p>1871265.41</p></td>
+                    <td><p>1871265.61</p></td>
+                    <td><p>07-05-2021</p></td>
+                    <td><p>1871265.91</p></td>
+                    <td><p>1871265.21</p></td>
+                    <td><p>1871265.51</p></td>
+                    <td><p>1871265.41</p></td>
+                  </tr>
+                  <tr>
+                    <td><p>Nitin Spinners Private LTC</p></td>
+                    <td><p>Retailing</p></td>
+                    <td><p>1871265</p></td>
+                    <td><p>2841265.91</p></td>
+                    <td><p>300265.81</p></td>
+                    <td><p>08-04-2021</p></td>
+                    <td><p>8001265.41</p></td>
+                    <td><p>10071265.6</p></td>
+                    <td><p>05-04-2021</p></td>
+                    <td><p>9001265.91</p></td>
+                    <td><p>1451265.81</p></td>
+                    <td><p>1841265.63</p></td>
+                    <td><p>1571265.61</p></td>
+                  </tr>
+                  <tr>
+                    <td><p>Nitin Spinners Private LTT</p></td>
+                    <td><p>Retailing</p></td>
+                    <td><p>1871265</p></td>
+                    <td><p>8712565.21</p></td>
+                    <td><p>1871265.88</p></td>
+                    <td><p>08-04-2021</p></td>
+                    <td><p>1874265.41</p></td>
+                    <td><p>1631265.61</p></td>
+                    <td><p>09-08-2021</p></td>
+                    <td><p>7871275.91</p></td>
+                    <td><p>8871265821</p></td>
+                    <td><p>5871265.51</p></td>
+                    <td><p>3871265.41</p></td>
+                  </tr>
+                  <tr>
+                    <td><p>Nitin Spinners Private LTD</p></td>
+                    <td><p>Retailing</p></td>
+                    <td><p>1871265</p></td>
+                    <td><p>1871265.91</p></td>
+                    <td><p>1871265.81</p></td>
+                    <td><p>07-05-2021</p></td>
+                    <td><p>1871265.41</p></td>
+                    <td><p>1871265.61</p></td>
+                    <td><p>07-05-2021</p></td>
+                    <td><p>1871265.91</p></td>
+                    <td><p>1871265.21</p></td>
+                    <td><p>1871265.51</p></td>
+                    <td><p>1871265.41</p></td>
+                  </tr>
+                  <tr>
+                    <td><p>Nitin Spinners Private LTC</p></td>
+                    <td><p>Retailing</p></td>
+                    <td><p>1871265</p></td>
+                    <td><p>2841265.91</p></td>
+                    <td><p>300265.81</p></td>
+                    <td><p>08-04-2021</p></td>
+                    <td><p>8001265.41</p></td>
+                    <td><p>10071265.6</p></td>
+                    <td><p>05-04-2021</p></td>
+                    <td><p>9001265.91</p></td>
+                    <td><p>1451265.81</p></td>
+                    <td><p>1841265.63</p></td>
+                    <td><p>1571265.61</p></td>
+                  </tr>
+                  <tr>
+                    <td><p>Nitin Spinners Private LTT</p></td>
+                    <td><p>Retailing</p></td>
+                    <td><p>1871265</p></td>
+                    <td><p>8712565.21</p></td>
+                    <td><p>1871265.88</p></td>
+                    <td><p>08-04-2021</p></td>
+                    <td><p>1874265.41</p></td>
+                    <td><p>1631265.61</p></td>
+                    <td><p>09-08-2021</p></td>
+                    <td><p>7871275.91</p></td>
+                    <td><p>8871265821</p></td>
+                    <td><p>5871265.51</p></td>
+                    <td><p>3871265.41</p></td>
+                  </tr>
+                  <tr>
+                    <td><p>Nitin Spinners Private LTD</p></td>
+                    <td><p>Retailing</p></td>
+                    <td><p>1871265</p></td>
+                    <td><p>1871265.91</p></td>
+                    <td><p>1871265.81</p></td>
+                    <td><p>07-05-2021</p></td>
+                    <td><p>1871265.41</p></td>
+                    <td><p>1871265.61</p></td>
+                    <td><p>07-05-2021</p></td>
+                    <td><p>1871265.91</p></td>
+                    <td><p>1871265.21</p></td>
+                    <td><p>1871265.51</p></td>
+                    <td><p>1871265.41</p></td>
+                  </tr>
+                  <tr>
+                    <td><p>Nitin Spinners Private LTC</p></td>
+                    <td><p>Retailing</p></td>
+                    <td><p>1871265</p></td>
+                    <td><p>2841265.91</p></td>
+                    <td><p>300265.81</p></td>
+                    <td><p>08-04-2021</p></td>
+                    <td><p>8001265.41</p></td>
+                    <td><p>10071265.6</p></td>
+                    <td><p>05-04-2021</p></td>
+                    <td><p>9001265.91</p></td>
+                    <td><p>1451265.81</p></td>
+                    <td><p>1841265.63</p></td>
+                    <td><p>1571265.61</p></td>
+                  </tr>
+                  <tr>
+                    <td><p>Nitin Spinners Private LTT</p></td>
+                    <td><p>Retailing</p></td>
+                    <td><p>1871265</p></td>
+                    <td><p>8712565.21</p></td>
+                    <td><p>1871265.88</p></td>
+                    <td><p>08-04-2021</p></td>
+                    <td><p>1874265.41</p></td>
+                    <td><p>1631265.61</p></td>
+                    <td><p>09-08-2021</p></td>
+                    <td><p>7871275.91</p></td>
+                    <td><p>8871265821</p></td>
+                    <td><p>5871265.51</p></td>
+                    <td><p>3871265.41</p></td>
+                  </tr>
+                  <tr>
+                    <td><p>Nitin Spinners Private LTD</p></td>
+                    <td><p>Retailing</p></td>
+                    <td><p>1871265</p></td>
+                    <td><p>1871265.91</p></td>
+                    <td><p>1871265.81</p></td>
+                    <td><p>07-05-2021</p></td>
+                    <td><p>1871265.41</p></td>
+                    <td><p>1871265.61</p></td>
+                    <td><p>07-05-2021</p></td>
+                    <td><p>1871265.91</p></td>
+                    <td><p>1871265.21</p></td>
+                    <td><p>1871265.51</p></td>
+                    <td><p>1871265.41</p></td>
+                  </tr>
+                  <tr>
+                    <td><p>Nitin Spinners Private LTC</p></td>
+                    <td><p>Retailing</p></td>
+                    <td><p>1871265</p></td>
+                    <td><p>2841265.91</p></td>
+                    <td><p>300265.81</p></td>
+                    <td><p>08-04-2021</p></td>
+                    <td><p>8001265.41</p></td>
+                    <td><p>10071265.6</p></td>
+                    <td><p>05-04-2021</p></td>
+                    <td><p>9001265.91</p></td>
+                    <td><p>1451265.81</p></td>
+                    <td><p>1841265.63</p></td>
+                    <td><p>1571265.61</p></td>
+                  </tr>
+                  <tr>
+                    <td><p>Nitin Spinners Private LTT</p></td>
+                    <td><p>Retailing</p></td>
+                    <td><p>1871265</p></td>
+                    <td><p>8712565.21</p></td>
+                    <td><p>1871265.88</p></td>
+                    <td><p>08-04-2021</p></td>
+                    <td><p>1874265.41</p></td>
+                    <td><p>1631265.61</p></td>
+                    <td><p>09-08-2021</p></td>
+                    <td><p>7871275.91</p></td>
+                    <td><p>8871265821</p></td>
+                    <td><p>5871265.51</p></td>
+                    <td><p>3871265.41</p></td>
+                  </tr>
+                  <tr>
+                    <td><p>Nitin Spinners Private LTD</p></td>
+                    <td><p>Retailing</p></td>
+                    <td><p>1871265</p></td>
+                    <td><p>1871265.91</p></td>
+                    <td><p>1871265.81</p></td>
+                    <td><p>07-05-2021</p></td>
+                    <td><p>1871265.41</p></td>
+                    <td><p>1871265.61</p></td>
+                    <td><p>07-05-2021</p></td>
+                    <td><p>1871265.91</p></td>
+                    <td><p>1871265.21</p></td>
+                    <td><p>1871265.51</p></td>
+                    <td><p>1871265.41</p></td>
+                  </tr>
+                  <tr>
+                    <td><p>Nitin Spinners Private LTC</p></td>
+                    <td><p>Retailing</p></td>
+                    <td><p>1871265</p></td>
+                    <td><p>2841265.91</p></td>
+                    <td><p>300265.81</p></td>
+                    <td><p>08-04-2021</p></td>
+                    <td><p>8001265.41</p></td>
+                    <td><p>10071265.6</p></td>
+                    <td><p>05-04-2021</p></td>
+                    <td><p>9001265.91</p></td>
+                    <td><p>1451265.81</p></td>
+                    <td><p>1841265.63</p></td>
+                    <td><p>1571265.61</p></td>
+                  </tr>
+                  <tr>
+                    <td><p>Nitin Spinners Private LTT</p></td>
+                    <td><p>Retailing</p></td>
+                    <td><p>1871265</p></td>
+                    <td><p>8712565.21</p></td>
+                    <td><p>1871265.88</p></td>
+                    <td><p>08-04-2021</p></td>
+                    <td><p>1874265.41</p></td>
+                    <td><p>1631265.61</p></td>
+                    <td><p>09-08-2021</p></td>
+                    <td><p>7871275.91</p></td>
+                    <td><p>8871265821</p></td>
+                    <td><p>5871265.51</p></td>
+                    <td><p>3871265.41</p></td>
+                  </tr>
+                  <tr>
+                    <td><p>Nitin Spinners Private LTD</p></td>
+                    <td><p>Retailing</p></td>
+                    <td><p>1871265</p></td>
+                    <td><p>1871265.91</p></td>
+                    <td><p>1871265.81</p></td>
+                    <td><p>07-05-2021</p></td>
+                    <td><p>1871265.41</p></td>
+                    <td><p>1871265.61</p></td>
+                    <td><p>07-05-2021</p></td>
+                    <td><p>1871265.91</p></td>
+                    <td><p>1871265.21</p></td>
+                    <td><p>1871265.51</p></td>
+                    <td><p>1871265.41</p></td>
+                  </tr>
+                  <tr>
+                    <td><p>Nitin Spinners Private LTC</p></td>
+                    <td><p>Retailing</p></td>
+                    <td><p>1871265</p></td>
+                    <td><p>2841265.91</p></td>
+                    <td><p>300265.81</p></td>
+                    <td><p>08-04-2021</p></td>
+                    <td><p>8001265.41</p></td>
+                    <td><p>10071265.6</p></td>
+                    <td><p>05-04-2021</p></td>
+                    <td><p>9001265.91</p></td>
+                    <td><p>1451265.81</p></td>
+                    <td><p>1841265.63</p></td>
+                    <td><p>1571265.61</p></td>
+                  </tr>
+                  <tr>
+                    <td><p>Nitin Spinners Private LTT</p></td>
+                    <td><p>Retailing</p></td>
+                    <td><p>1871265</p></td>
+                    <td><p>8712565.21</p></td>
+                    <td><p>1871265.88</p></td>
+                    <td><p>08-04-2021</p></td>
+                    <td><p>1874265.41</p></td>
+                    <td><p>1631265.61</p></td>
+                    <td><p>09-08-2021</p></td>
+                    <td><p>7871275.91</p></td>
+                    <td><p>8871265821</p></td>
+                    <td><p>5871265.51</p></td>
+                    <td><p>3871265.41</p></td>
+                  </tr>
+                  <tr>
+                    <td><p>Nitin Spinners Private LTD</p></td>
+                    <td><p>Retailing</p></td>
+                    <td><p>1871265</p></td>
+                    <td><p>1871265.91</p></td>
+                    <td><p>1871265.81</p></td>
+                    <td><p>07-05-2021</p></td>
+                    <td><p>1871265.41</p></td>
+                    <td><p>1871265.61</p></td>
+                    <td><p>07-05-2021</p></td>
+                    <td><p>1871265.91</p></td>
+                    <td><p>1871265.21</p></td>
+                    <td><p>1871265.51</p></td>
+                    <td><p>1871265.41</p></td>
+                  </tr>
+                  <tr>
+                    <td><p>Nitin Spinners Private LTC</p></td>
+                    <td><p>Retailing</p></td>
+                    <td><p>1871265</p></td>
+                    <td><p>2841265.91</p></td>
+                    <td><p>300265.81</p></td>
+                    <td><p>08-04-2021</p></td>
+                    <td><p>8001265.41</p></td>
+                    <td><p>10071265.6</p></td>
+                    <td><p>05-04-2021</p></td>
+                    <td><p>9001265.91</p></td>
+                    <td><p>1451265.81</p></td>
+                    <td><p>1841265.63</p></td>
+                    <td><p>1571265.61</p></td>
+                  </tr>
+                  <tr>
+                    <td><p>Nitin Spinners Private LTT</p></td>
+                    <td><p>Retailing</p></td>
+                    <td><p>1871265</p></td>
+                    <td><p>8712565.21</p></td>
+                    <td><p>1871265.88</p></td>
+                    <td><p>08-04-2021</p></td>
+                    <td><p>1874265.41</p></td>
+                    <td><p>1631265.61</p></td>
+                    <td><p>09-08-2021</p></td>
+                    <td><p>7871275.91</p></td>
+                    <td><p>8871265821</p></td>
+                    <td><p>5871265.51</p></td>
+                    <td><p>3871265.41</p></td>
+                  </tr>
+                  
+                  
+                </tbody>
+                <tfoot>
+                  <tr class="sum">
+                  <th></th>
+                    <td><p></p></td>
+                    <td><p>8087126.55</p></td>
+                    <td><p>618712.65</p></td>
+                    <td><p>923978.69</p></td>
+                    <td><p>839786.99</p></td>
+                    <td><p>742397.86</p></td>
+                    <td><p>22397.86</p></td>
+                    <td><p>972397.86</p></td>
+                    <td><p>582397.86</p></td>
+                    <td><p>362397.86</p></td>
+                    <td><p>372397.86</p></td>
+                    <td><p>807126.4</p></td>
+                  </tr>
+                </tfoot>
+              </table>
+            </div>
+            <div style="height:35px;"></div>
+          </div>
+        </div>
+      
+
+
+
+
+        <div class="fil-cat container-m shadow-sm p-3 bg-body my-5 d-flex d-none" style="height: 455px;">
+          <div class="cat-menu col-2">
+            <h5>Categories</h5>
+            <ul class="cat-ul nav-pills" id="cat-ul">
+              <li class="active" style="margin-top:40px;"><a class="nav-link" href="#cat-section1">Share Price (TTM)</a></li>
+              <li><a class="nav-link" href="#cat-section2">Result Data</a></li>
+              <li><a class="nav-link" href="#cat-section3">Turn Around</a></li>
+              <li><a class="nav-link" href="#cat-section4">More Filters</a></li>
+            </ul>
+          </div>
+      
+          <div class="filt cat-contant col-10">
+            <div class="aply-fil-btn d-flex justify-content-end">
+              <button class="btn" style="border:2px solid #ff314a;color:#ff314a;font-size:10px;" onclick="resetFilters('seet-table')">RESET DEFAULTS</button>
+              <button id="apply-btn" class="btn ms-2" style="background:#003f5b;color:#fff;font-size: 10px;">APPLY FILTERS</button>
+            </div>
+            <div class="cat-fil-contant p-3" data-bs-spy="scroll" data-bs-target="#cat-ul" data-bs-offset="455" tabindex="0">
+              <section id="cat-section1" class="cat-section">
+                <div class="row my-5 justify-content-center">
+                  <div class="fil-inputs fil-input1">
+                    <label class="filter-label">Market Cap</label>
+                    <input class="me-2 filter-text" id="market-cap" type="text"  ><input class="filter-text" type="text"   id="market-cap-2">
+                  </div>
+                  <div class="fil-inputs">
+                    <label class="filter-label">LTP</label>
+                    <input type="text" class="filter-text"   id="ltp-filter">
+                  </div>
+                  <div class="fil-inputs">
+                    <label class="filter-label">TTM (P/B)</label>
+                    <input type="text" class="filter-text"   id="market-pb-filter">
+                  </div>
+                  <div class="fil-inputs">
+                    <label class="filter-label">TTM (P/E)</label>
+                    <input type="text" class="filter-text"   id="market-ttm-filter">
+                  </div>
+                  <div class="fil-inputs">
+                    <label class="filter-label">ROCE</label>
+                    <input type="text" class="filter-text"   id="roce-filter">
+                  </div>
+                </div>
+                <div class="row justify-content-center cat-s1-row">
+                  <div class="fil-inputs">
+                    <label class="filter-label">TTM Sales Abs</label>
+                    <input type="text" class="filter-text"   id="ttm-sales-filter">
+                  </div>
+                  <div class="fil-inputs">
+                    <label class="filter-label">TTM PAT Abs</label>
+                    <input type="text" class="filter-text"   id="ttm-pat-abs-filter">
+                  </div>
+                </div>
+              </section>
+      
+              <section id="cat-section2" class="cat-section">
+                <div class="row my-5 justify-content-center">
+                  <div class="fil-inputs">
+                    <label class="filter-label">Sales (YOY%)</label>
+                    <input type="text" class="filter-text"   id="sales-yoy-filter">
+                  </div>
+                  <div class="fil-inputs">
+                    <label class="filter-label">Sales (QOQ%)</label>
+                    <input type="text" class="filter-text"   id="sales-qqq-filter">
+                  </div>
+                  <div class="fil-inputs">
+                    <label class="filter-label">EBDITA (YOY%)</label>
+                    <input type="text" class="filter-text"   id="ebdita-yoy-filter">
+                  </div>
+                  <div class="fil-inputs">
+                    <label class="filter-label">EBDITA (QOQ%)</label>
+                    <input type="text" class="filter-text"   id="ebdita-qqq-filter">
+                  </div>
+                </div>
+                <div class="row justify-content-center">
+                  <div class="fil-inputs">
+                    <label class="filter-label">EBDITA (YOY%)</label>
+                    <input type="text" class="filter-text"   id="ebdita-yoy-filter-2">
+                  </div>
+                  <div class="fil-inputs">
+                    <label class="filter-label">PAT (QOQ%)</label>
+                    <input type="text" class="filter-text"   id="pat-qqq-filter">
+                  </div>
+                  <div class="fil-inputs">
+                    <label class="filter-label">PAT (YOY%)</label>
+                    <input type="text" class="filter-text"   id="pat-yoy-filter">
+                  </div>
+                </div>
+              </section>
+      
+              <section id="cat-section3" class="cat-section">
+                <div class="row justify-content-center">
+                  <div class="fil-inputs d-flex" style="align-items: center;justify-content: center;">
+                    <label class="filter-label">EBDITA - TO +</label>
+                    <div id="ebdita-to-filter" class="" tabindex="1">
+                      <span>Select</span>
+                      <i class="fa fa-sort-down"></i>
+                      <ul class="options" tabindex="1">
+                        <div>
+                          <li>Select None</li>
+                          <li>Option 1</li>
+                          <li>Option 2</li>
+                          <li>Option 3</li>
+                          <li>Option 4</li>
+                          <li>Option 5</li>
+                          <li>Option 6</li>
+                        </div>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="fil-inputs d-flex" style="align-items: center;justify-content: center;">
+                    <label class="filter-label">PAT - TO +</label>
+                    <div id="pat-to-filter" class="" tabindex="1">
+                      <span>Select</span>
+                      <i class="fa fa-sort-down"></i>
+                      <ul class="options" tabindex="1">
+                        <div>
+                          <li>Select None</li>
+                          <li>Option 1</li>
+                          <li>Option 2</li>
+                          <li>Option 3</li>
+                          <li>Option 4</li>
+                          <li>Option 5</li>
+                          <li>Option 6</li>
+                        </div>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="fil-inputs">
+                    <label class="filter-label">Gross Margin</label>
+                    <input type="text" class="filter-text"   id="gross-margin-filter">
+                  </div>
+                  <div class="fil-inputs">
+                    <label class="filter-label">Gross Profit</label>
+                    <input type="text" class="filter-text"   id="gross-profit-filter">
+                  </div>
+                </div>
+              </section>
+      
+              <section id="cat-section4" class="cat-section">
+                <div class="row justify-content-center">
+                  <div class="fil-inputs d-flex" style="align-items: center;">
+                    <label class="filter-label">Sector</label>
+                    <div id="sector-filter"  class="" tabindex="1">
+                      <span>Select</span>
+                      <i class="fa fa-sort-down"></i>
+                      <ul class="options"  tabindex="1">
+                        <div>
+                          <li>Select None</li>
+                          <li>Option 1</li>
+                          <li>Option 2</li>
+                          <li>Option 3</li>
+                          <li>Option 4</li>
+                          <li>Option 5</li>
+                          <li>Option 6</li>
+                        </div>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="fil-inputs d-flex" style="align-items: center;">
+                    <label class="filter-label">Industry</label>
+                    <div id="industry-filter" class="" tabindex="1">
+                      <span>Select</span>
+                      <i class="fa fa-sort-down"></i>
+                      <ul class="options" tabindex="1">
+                        <div>
+                          <li>Select None</li>
+                          <li>Option 1</li>
+                          <li>Option 2</li>
+                          <li>Option 3</li>
+                          <li>Option 4</li>
+                          <li>Option 5</li>
+                          <li>Option 6</li>
+                        </div>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="fil-inputs d-flex" style="align-items: center;">
+                    <label class="filter-label">Company</label>
+                    <div id="company-checkbox-filter" class="" tabindex="1">
+                      <span>Select</span>
+                      <i class="fa fa-sort-down"></i>
+                      <ul class="options" tabindex="1">
+                        <div>
+                          <li class="position-relative">
+                            <i class="fa fa-times position-absolute" style="top:3px;color: #f47a14;"></i>
+                            <p class="text mb-1 ps-3">Clear All</p>
+                          </li>
+                          <li class="filter-checkbox">
+                            <input type="checkbox" name="Nitin Spinners Private LTC" id="cmp_1" class="custom-checkbox" data-columnindex="1"/>
+                            <label for="cmp_1" class="text">Nitin Spinners Private LTC</label>
+                          </li>
+                          <li class="filter-checkbox">
+                            <input type="checkbox" name="Nitin Spinners Private LTT" id="cmp_2" class="custom-checkbox" data-columnindex="2"/>
+                            <label for="cmp_2" class="text">Nitin Spinners Private LTT</label>
+                          </li>
+                          <li class="filter-checkbox">
+                            <input type="checkbox" name="Nitin Spinners Private LDD" id="cmp_3" class="custom-checkbox" data-columnindex="3"/>
+                            <label for="cmp_3" class="text">Nitin Spinners Private LDD</label>
+                          </li>
+                          <li class="filter-checkbox">
+                            <input type="checkbox" name="Option 1" id="cmp_4" class="custom-checkbox" data-columnindex="4"/>
+                            <label for="cmp_4" class="text">Option 1</label>
+                          </li>
+                          <li class="filter-checkbox">
+                            <input type="checkbox" name="Option 2" id="cmp_5" class="custom-checkbox" data-columnindex="5"/>
+                            <label for="cmp_5" class="text">Option 2</label>
+                          </li>
+                          <li class="filter-checkbox">
+                            <input type="checkbox" name="Option 3" id="cmp_6" class="custom-checkbox" data-columnindex="6"/>
+                            <label for="cmp_6" class="text">Option 2</label>
+                          </li>
+                        </div>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </div>
+        </div>
+
+  
+  <!--Footer-->
+  <!-- <div style="height: 8vh;"></div> -->
+  <footer class="footer">
+    <div class="footer-row">
+      <div class="col-2">
+        <div class="footer-logo">
+          <img src="image/Logo.svg">
+        </div>
+      </div>
+
+      <div class="col-7">
+        <div class="copyright">
+          <p>Copyright © 2021 Omkara Capital Private Limited | All rights reserved <br />For proprietay use only</p>
+        </div>
+      </div>
+
+      <div class="col-2">
+        <div class="made-with">
+          <p>Made with <span class="f-love">❤</span> by Omkara</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  
+  <script type="text/javascript" src="mt.js"></script>
+  <script type="text/javascript" src="index.js"></script>
+
+  <script type="text/javascript">
+
+
+function toggleShowHide(clickedItem) { //This function will toggle show/hide of navbar dropdown menus on smaller screens
+      var dashbordMQuery = window.matchMedia("(max-width: 991px)")
+      if (dashbordMQuery.matches) { // If media query matches
+        if(clickedItem.querySelector('ul').style.display=="") {
+          clickedItem.querySelector('ul').style.display="block";
+        } else {
+          clickedItem.querySelector('ul').style.display="";
+        }
+      }
+    }
+
+        // basic usage
+        $('.tablemanager').tablemanager({
+      firstSort: [[3,0],[2,0],[1,'asc']],
+      disable: ["last"],
+      appendFilterby: true,
+      debug: true,
+      vocabulary: {
+    voc_show_rows: 'Rows Per Page',
+    
+  },
+      pagination: true,
+      showrows: [15,25,50],
+      disableFilterBy: [1]
+    });
+
+    //count rows in the table 
+    var rowCount = $('#seet-table tr').length;
+    let totalpage = document.querySelector(".r-results");
+    let tPgbottom = document.querySelector("#s-n-pg");
+    document.getElementById("count-row").innerHTML = rowCount;
+    document.querySelector("#numrows").setAttribute("multiple", "");
+    
+
+    var itm = document.getElementById('numrows');
+    var cln = itm.cloneNode(true);
+    cln.classList.add("numrowsOverlay");
+
+    
+    var prnt=document.querySelector('.for_numrows');
+    prnt.appendChild(cln);
+
+    $('.for_numrows').on('click', function(e) {
+      if(event.target.parentElement.classList.contains('numrowsOverlay'))
+      {
+        $('select.numrowsOverlay option:contains('+event.target.textContent+')').addClass("active")
+        .siblings().removeClass("active");
+
+        var el = document.querySelector('.numrowsBase');
+        el.value=event.target.textContent;
+        el.dispatchEvent(new Event('change'));
+  
+        // $('.numrowsBase option:contains('+event.target.textContent+')').trigger("change");
+      }
+    });
+
+
+    document.querySelector('.for_numrows').getElementsByTagName('SELECT')[0].classList.add("numrowsBase");
+    $('.numrowsOverlay').attr("disabled", "disabled");
+    $('.numrowsOverlay option').first().addClass("active");
+    $('.numrowsBase option:contains("15")').attr("selected", "selected");
+    
+    // document.querySelector('.numrowsBase').setAttribute("onchange", "reCuntall(event)");
+    let elem = document.querySelector('div#pagesControllers .pagecontroller-num:nth-last-child(3)');
+    let elem2 = document.querySelector('div#pagesControllers .pagecontroller-num:nth-last-child(3)');
+    let clone = elem.cloneNode(true);
+    let clone2 = elem2.cloneNode(true);
+
+    
+
+    function reCuntPg() {
+      let elem = document.querySelector('div#pagesControllers .pagecontroller-num:nth-last-child(3)');
+      let old_no_pg = document.querySelector("#elem2");
+      let clone = elem.cloneNode(true);
+      old_no_pg.classList.add('d-hide');
+      clone.classList = 'elem3';
+      clone.classList.remove('pagecontroller');
+      clone.classList.remove('pagecontroller-num');
+      totalpage.after(clone);
+     
+    };
+    function reCuntPg2(){
+      let elem2 = document.querySelector('div#pagesControllers .pagecontroller-num:nth-last-child(3)');
+      let clone2 = elem2.cloneNode(true);
+      clone2.classList = 'elem3';
+      clone2.classList.remove('pagecontroller');
+      clone2.classList.remove('pagecontroller-num');
+      tPgbottom.after(clone2);
+    };
+
+
+    // function reCuntall(event){
+      
+    //   if(event.target.parentElement.classList.contains('numrowsBase'))
+    //   {
+    //     reCuntPg();
+    //     reCuntPg2();
+    //   }
+      
+    // };
+
+    clone.id = 'elem2';
+    clone.classList.remove('pagecontroller');
+    clone.classList.remove('pagecontroller-num');
+    totalpage.after(clone);
+    clone2.classList = 'elem3';
+    clone2.classList.remove('pagecontroller');
+    clone2.classList.remove('pagecontroller-num');
+    tPgbottom.after(clone2);
+
+    //to highlight the sortable columns
+    var sortableColumns = $('.tablemanager th.sorterHeader');
+    sortableColumns.on('click', (e)=>{
+        e.target.style.background="#e4e4e4";
+        sortableColumns.toArray().forEach(element => {
+          if(element!=e.target)
+          {
+            element.style.background="transparent";
+          }     
+        });
+
+    });
+
+  </script>
+
+</body>
+</html>
